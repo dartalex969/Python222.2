@@ -46,23 +46,6 @@ with open('test.json') as json_file:
                 f1.write(json_object)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def file(file: list):
 
     def get(*args):
