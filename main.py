@@ -76,22 +76,26 @@ with open('test.json') as json_file:
         print('''Ввод нового сотрудника - 1
 Редактирование данных - 2
 Удаление сотрудника - 3
-Удаление сотрудника - 4
-Поиск по фамилии - 5
-Вывод информации обо всех сотрудниках по возрасту - 6
-Вывод информации обо всех сотрудниках по первой букве фамилии - 7
-Сохранение данных - 8
+Поиск по фамилии - 4
+Вывод информации обо всех сотрудниках по возрасту - 5
+Вывод информации обо всех сотрудниках по первой букве фамилии - 6
+Сохранение данных - 7
 Выход - 0''')
         choose = int(input('Выберите вариант: '))
 
         if choose == 0:
             result = {'employees':employees}
             json_object = json.dumps(result)
-            with open('test.json','w') as f1, open('test/test2.txt','w') as f2:
+            with open('test.json', 'w') as f1, open('test/test2.txt', 'w') as f2:
                 f1.write(json_object)
-                # for i in employees:
-                #     f2.writelines()
-                #     print()
+                testF = ''
+                for i in employees:
+                    for j in i:
+                        testF += str(j)
+                        testF += ' '
+                        testF += str(i[j]) + '\n'
+                    testF += '\n'
+                f2.write(testF)
             break
         elif choose == 1:
             add_employee(employees)
@@ -116,10 +120,16 @@ with open('test.json') as json_file:
         elif choose == 10:
             result = {'employees': employees}
             json_object = json.dumps(result)
-            with open('test.json','w') as f1:
+            with open('test.json', 'w') as f1, open('test/test2.txt', 'w') as f2:
                 f1.write(json_object)
-
-
+                testF = ''
+                for i in employees:
+                    for j in i:
+                        testF += str(j)
+                        testF += ' '
+                        testF += str(i[j]) + '\n'
+                    testF += '\n'
+                f2.write(testF)
 
 
 
