@@ -1,5 +1,0 @@
-
-
-
-
-print('Mametov Ubaydullokh')
