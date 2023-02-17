@@ -1,6 +1,20 @@
 import json
 import re
 
+def add_employee(employees):
+    if (len(employees)):
+        keys = employees[0].keys()
+    else:
+        pass
+        return
+    new_employee = {}
+    for key in keys:
+        value = input(f'Enter {key} of employee: ')
+        new_employee[key] = value
+    if new_employee not in employees:
+        employees.append(new_employee)
+
+
 def file(file: list):
     def get(*args):
         name, age1 = "", 0
@@ -71,7 +85,8 @@ with open('test.json') as json_file:
                 #     f2.writelines()
                 #     print()
             break
-
+        elif choose == 1:
+            add_employee(employees)
         elif choose == 6:
             funk = file(employees)
             for i in funk(int(input("Чо надо? Введи число: "))):
