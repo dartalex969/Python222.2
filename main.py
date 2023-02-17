@@ -34,16 +34,31 @@ with open('test.json') as json_file:
             json_object = json.dumps(result)
             with open('test.json','w') as f1, open('test/test2.txt','w') as f2:
                 f1.write(json_object)
-                # for i in employees:
-                #     f2.writelines()
-                #     print()
-
+                testF = ''
+                for i in employees:
+                    for j in i:
+                        testF += str(j)
+                        testF += ' '
+                        testF += str(i[j]) + '\n'
+                    testF += '\n'
+                f2.write(testF)
             break
         elif choose == 10:
             result = {'employees': employees}
             json_object = json.dumps(result)
-            with open('test.json','w') as f1:
+            with open('test.json', 'w') as f1, open('test/test2.txt', 'w') as f2:
                 f1.write(json_object)
+                testF = ''
+                for i in employees:
+                    for j in i:
+                        testF += str(j)
+                        testF += ' '
+                        testF += str(i[j]) + '\n'
+                    testF += '\n'
+                f2.write(testF)
+
+
+
 
 
 def file(file: list):
