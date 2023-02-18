@@ -15,6 +15,35 @@ def add_employee(employees):
         employees.append(new_employee)
 
 
+def edit_employee(employees):
+    if not employees:
+        print('Список сотрудников пуст.')
+        return
+
+    last_name = input('Введите фамилию сотрудника, которого нужно отредактировать: ')
+    found = False
+    for employee in employees:
+        if employee['first_name'] == last_name:
+            found = True
+            name = input('Введите имя (оставьте пустым, чтобы не изменять): ')
+            if name:
+                employee['name'] = name
+            first_name = input('Введите фамилию (оставьте пустым, чтобы не изменять): ')
+            if first_name:
+                employee['first_name'] = first_name
+            age = input('Введите возраст (оставьте пустым, чтобы не изменять): ')
+            if age:
+                employee['age'] = age
+            position = input('Введите должность (оставьте пустым, чтобы не изменять): ')
+            if position:
+                employee['position'] = position
+            print('Сотрудник отредактирован успешно.')
+            break
+
+    if not found:
+        print('Сотрудник с такой фамилией не найден.')
+
+
 def file(file: list):
     def get(*args):
         name, age1 = "", 0
