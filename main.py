@@ -9,7 +9,7 @@ def add_employee(employees):
         return
     new_employee = {}
     for key in keys:
-        value = input(f'Enter {key} of employee: ')
+        value = input(f'Введите {key} сотрудника: ')
         new_employee[key] = value
     if new_employee not in employees:
         employees.append(new_employee)
