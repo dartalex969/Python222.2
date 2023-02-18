@@ -116,6 +116,8 @@ with open('test.json') as json_file:
             break
         elif choose == 1:
             add_employee(employees)
+        elif choose == 2:
+            edit_employee(employees)
         elif choose == 6:
             funk = file(employees)
             for i in funk(int(input("Чо надо? Введи число: "))):
